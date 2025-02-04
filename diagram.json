@@ -32,11 +32,25 @@
       "attrs": { "value": "330" }
     },
     {
-      "type": "wokwi-rgb-led",
-      "id": "rgb1",
-      "top": 80.8,
-      "left": -171.7,
-      "attrs": { "common": "cathode" }
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 63.6,
+      "left": -169,
+      "attrs": { "color": "green", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 63.6,
+      "left": -197.8,
+      "attrs": { "color": "yellow", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 63.6,
+      "left": -226.6,
+      "attrs": { "color": "red", "flip": "1" }
     }
   ],
   "connections": [
@@ -45,10 +59,12 @@
     [ "pico:GP11", "r3:2", "green", [ "h-25.2", "v-3.15" ] ],
     [ "pico:GP12", "r2:2", "green", [ "h-25.2", "v6.45" ] ],
     [ "r1:2", "pico:GP13", "green", [ "v0", "h8.4", "v-19.2" ] ],
-    [ "rgb1:R", "r1:1", "green", [ "v0" ] ],
-    [ "rgb1:G", "r3:1", "green", [ "v0" ] ],
-    [ "rgb1:B", "r2:1", "green", [ "v0" ] ],
-    [ "pico:GND.4", "rgb1:COM", "black", [ "h-15.6", "v16.05", "h-144" ] ]
+    [ "led1:C", "pico:GND.4", "black", [ "v86.4", "h134.4", "v-19.2" ] ],
+    [ "led2:C", "pico:GND.4", "black", [ "v86.4", "h163.2", "v-19.2" ] ],
+    [ "led3:C", "pico:GND.4", "black", [ "v86.4", "h192", "v-19.2" ] ],
+    [ "led1:A", "r3:1", "green", [ "v0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "led3:A", "r1:1", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
