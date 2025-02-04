@@ -8,12 +8,14 @@
 
 bool repeating_timer_callback(struct repeating_timer *t){
     static uint8_t count = 0;
+    count = (count + 1) % 3;
+    
     switch (count)
     {
     case 0:
         gpio_put(RED_LED, 1);
-        gpio_put(BLUE_LED, 1);
-        gpio_put(GREEN_LED, 1);
+        gpio_put(BLUE_LED, 0);
+        gpio_put(GREEN_LED, 0);
         break;
 
     case 1:
@@ -28,7 +30,6 @@ bool repeating_timer_callback(struct repeating_timer *t){
         gpio_put(GREEN_LED, 1);
         break;
     }
-    count = (count + 1) % 3;
     return true;
 }
 
@@ -39,10 +40,15 @@ int main()
     gpio_init(RED_LED);
     gpio_init(BLUE_LED);
     gpio_init(GREEN_LED);
+    
 
     gpio_set_dir(RED_LED, GPIO_OUT);
     gpio_set_dir(BLUE_LED, GPIO_OUT);
     gpio_set_dir(GREEN_LED, GPIO_OUT);
+
+    gpio_put(RED_LED, 1);
+    gpio_put(BLUE_LED, 0);
+    gpio_put(GREEN_LED, 0);
 
     struct repeating_timer timer;
 
