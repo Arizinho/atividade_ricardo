@@ -31,4 +31,4 @@ Os pinos GPIO da Raspberry Pi Pico W estão configurados conforme a tabela abaix
 
 Link do vídeo:
 
-https://drive.google.com/file/d/1VXEfgnm6a1NYm3uRt1uxuv77K7U9XTPa/view?usp=sharing
+https://drive.google.com/file/d/1p4XHhU0coy_C6k46G3P6EImorkgx_cj1/view?usp=sharing
